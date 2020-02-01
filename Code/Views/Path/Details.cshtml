@@ -1,0 +1,65 @@
+﻿@model PathApp.Models.PercorsiModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Path Details</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IdPercorso)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdPercorso)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IdSottorete)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdSottorete)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IdStazioneOrigine)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdStazioneOrigine)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IdStazioneDestinazione)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdStazioneDestinazione)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IdVia1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdVia1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IdVia2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdVia2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Distanza)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Distanza)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Versione)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Versione)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdSottorete">Edit</a> |
+    <a asp-action="Index">Back to Path List</a>
+</div>

@@ -1,0 +1,64 @@
+﻿@model PathApp.Models.PercorsiModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create Path</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label for="IdPercorso" class="control-label">@Html.DisplayNameFor(model => model.IdPercorso)</label>
+                <input asp-for="IdPercorso" class="form-control" />
+                <span asp-validation-for="IdPercorso" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label for="IdSottorete" class="control-label">@Html.DisplayNameFor(model => model.IdSottorete)</label>
+                <input asp-for="IdSottorete" class="form-control" />
+                <span asp-validation-for="IdSottorete" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="IdStazioneOrigine" class="control-label">Original Station</label>
+                @*<input asp-for="IdStazioneOrigine" class="form-control" />*@
+                @Html.DropDownList("drpOriginalStation", (IEnumerable<SelectListItem>)ViewBag.originalStationsList, new { @class = "dropdown-stations", @id = "drpOriginalStation" })
+                <span asp-validation-for="IdStazioneOrigine" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="IdStazioneDestinazione" class="control-label">destination Station</label>
+                @Html.DropDownList("drpDestinationStation", (IEnumerable<SelectListItem>)ViewBag.destinationStationsList, new { @class = "dropdown-stations", @id = "drpDestinationStation" })
+                <span asp-validation-for="IdStazioneDestinazione" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="IdVia1" class="control-label">Via1 Station</label>
+                @Html.DropDownList("drpVia1Station", (IEnumerable<SelectListItem>)ViewBag.via1StationsList, new { @class = "dropdown-stations", @id = "drpVia1Station" })
+                <span asp-validation-for="IdVia1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="IdVia2" class="control-label">Via2 Name</label>
+                @Html.DropDownList("drpVia2Station", (IEnumerable<SelectListItem>)ViewBag.via2StationsList, new { @class = "dropdown-stations", @id = "drpVia2Station" })
+                <span asp-validation-for="IdVia2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="Distanza" class="control-label">@Html.DisplayNameFor(model => model.Distanza)</label>
+                <input asp-for="Distanza" class="form-control" />
+                <span asp-validation-for="Distanza" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="Versione" class="control-label">@Html.DisplayNameFor(model => model.Versione)</label>
+                <input asp-for="Versione" class="form-control" />
+                <span asp-validation-for="Versione" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to Path List</a>
+</div>

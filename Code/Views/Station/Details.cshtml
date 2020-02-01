@@ -1,0 +1,53 @@
+﻿@model PathApp.Models.StazioneModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Station Details</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IDStazione)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IDStazione)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CodiceStazione)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CodiceStazione)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NomeStazione)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NomeStazione)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RitiroTessera)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RitiroTessera)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RiCaricaAbbonamento)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RiCaricaAbbonamento)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Versione)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Versione)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IDStazione">Edit</a> |
+    <a asp-action="Index">Back to Station List</a>
+</div>

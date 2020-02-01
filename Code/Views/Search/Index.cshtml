@@ -1,0 +1,129 @@
+﻿@page
+@model IEnumerable<PathApp.Models.NewPercorsiModel>
+@{
+
+}
+<div class="header-main">
+    <h2>Search In Paths</h2>
+</div>
+
+<div class="body">
+    @using (Html.BeginForm("SearchPath", "Search", FormMethod.Post, new { @id = "searchPath" }))
+    {
+        <div class=" w-100 d-flex">
+            <div class="w-50">
+                <div name="drpOriginalStation" class="margin-bottom">
+                    <label class="stations" for="drpOriginalStation">List Of Original Stations:</label>
+                    <div>
+                        @Html.DropDownList("drpOriginalStation", (IEnumerable<SelectListItem>)ViewBag.originalStationsList, new { @class = "dropdown-stations", @id = "drpOriginalStation", onChange = "onSelectedIndexChanged()" })
+                    </div>
+                </div>
+                @{
+                    if (ViewBag.PathList != null)
+                    {
+                        <div name="drpVia1Station" class="margin-bottom">
+                            <label class="stations" for="drpVia1Station">List Of Via1 Stations:</label>
+                            <div>
+                                @Html.DropDownList("drpVia1Station", (IEnumerable<SelectListItem>)ViewBag.Via1StationsList, new { @class = "dropdown-stations", onChange = "onSelectedIndexChanged()" })
+                            </div>
+                        </div>
+                    }
+                }
+
+            </div>
+            <div class="w-50">
+                <div name="drpDestinationStation" class="margin-bottom">
+                    <label class="stations" for="drpDestinationStation">List Of Destination Stations:</label>
+                    <div>
+                        @Html.DropDownList("drpDestinationStation", (IEnumerable<SelectListItem>)ViewBag.destinationStationsList, new { @class = "dropdown-stations", @id = "drpDestinationStation", onChange = "onSelectedIndexChanged()" })
+                    </div>
+                </div>
+                @{
+                    if (ViewBag.PathList != null)
+                    {
+                        <div name="drpVia2Station" class="margin-bottom">
+                            <label class="stations" for="drpVia2Station">List Of Via2 Stations:</label>
+                            <div>
+                                @Html.DropDownList("drpVia2Station", (IEnumerable<SelectListItem>)ViewBag.Via2StationsList, new { @class = "dropdown-stations", onChange = "onSelectedIndexChanged()" })
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+        <div class="validationsummary">
+            @Html.ValidationSummary()
+        </div>
+    }
+
+
+    @{
+        if (ViewBag.PathList != null)
+        {
+            <div class="header-table">
+                List Of Paths
+            </div>
+            <table id="table-records" class="tbl-records">
+                <thead>
+                    <tr class="tr-title">
+                        <th>
+                            <b>@Html.DisplayNameFor(model => model.IdPercorso)</b>
+                        </th>
+                        <th>
+                            <b>@Html.DisplayNameFor(model => model.StazioneOrigineName)</b>
+                        </th>
+                        <th>
+                            <b>@Html.DisplayNameFor(model => model.StazioneDestinazioneName)</b>
+                        </th>
+                        <th>
+                            <b>@Html.DisplayNameFor(model => model.Via1Name)</b>
+                        </th>
+                        <th>
+                            <b>@Html.DisplayNameFor(model => model.Via2Name)</b>
+                        </th>
+                        <th>
+                            <b>@Html.DisplayNameFor(model => model.Distanza)</b>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (NewPercorsiModel newPercorsiObj in ViewBag.PathList)
+                    {
+                        <tr class="tr-records">
+                            <th>
+                                @Html.Label(newPercorsiObj.IdPercorso.ToString())
+                            </th>
+                            <th>
+                                @Html.Label(newPercorsiObj.StazioneOrigineName)
+                            </th>
+                            <th>
+                                @Html.Label(newPercorsiObj.StazioneDestinazioneName)
+                            </th>
+                            <th>
+                                @Html.Label(newPercorsiObj.Via1Name)
+                            </th>
+                            <th>
+                                @Html.Label(newPercorsiObj.Via2Name)
+                            </th>
+                            <th>
+                                @Html.Label(newPercorsiObj.Distanza.ToString())
+                            </th>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    }
+</div>
+
+<body>
+    <script type="text/javascript">
+
+        function onSelectedIndexChanged() {
+            document.getElementById('searchPath').submit();
+        }
+
+    </script>
+</body>
+
+

@@ -1,0 +1,53 @@
+﻿@model PathApp.Models.StazioneModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create Station</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label for="IDStazione" class="control-label">@Html.DisplayNameFor(model => model.IDStazione)</label>
+                <input asp-for="IDStazione" class="form-control" />
+                <span asp-validation-for="IDStazione" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label for="CodiceStazione" class="control-label">@Html.DisplayNameFor(model => model.CodiceStazione)</label>
+                <input asp-for="CodiceStazione" class="form-control" />
+                <span asp-validation-for="CodiceStazione" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="NomeStazione" class="control-label">@Html.DisplayNameFor(model => model.NomeStazione)</label>
+                <input asp-for="NomeStazione" class="form-control" />
+                <span asp-validation-for="NomeStazione" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="RitiroTessera" class="control-label">@Html.DisplayNameFor(model => model.RitiroTessera)</label>
+                <input asp-for="RitiroTessera" class="form-control" />
+                <span asp-validation-for="RitiroTessera" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="RiCaricaAbbonamento" class="control-label">@Html.DisplayNameFor(model => model.RiCaricaAbbonamento)</label>
+                <input asp-for="RiCaricaAbbonamento" class="form-control" />
+                <span asp-validation-for="RiCaricaAbbonamento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="Versione" class="control-label">@Html.DisplayNameFor(model => model.Versione)</label>
+                <input asp-for="Versione" class="form-control" />
+                <span asp-validation-for="Versione" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to Station List</a>
+</div>

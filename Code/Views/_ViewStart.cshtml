@@ -1,0 +1,20 @@
+﻿@{
+    var CurrentControllerName = this.ViewContext.RouteData.Values["controller"].ToString();
+    string clayout = "~/Views/Shared/_SearchLayout.cshtml";
+    switch (CurrentControllerName)
+    {
+        case "Path":
+            clayout = "~/Views/Shared/_PathLayout.cshtml";
+            break;
+        case "Station":
+            clayout = "~/Views/Shared/_StationLayout.cshtml";
+            break;
+        case "Search":
+            clayout = "~/Views/Shared/_SearchLayout.cshtml";
+            break;
+        default:
+            clayout = "~/Views/Shared/_SearchLayout.cshtml";
+            break;
+    }
+    Layout = clayout;
+}

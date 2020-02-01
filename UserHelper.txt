@@ -1,0 +1,10 @@
+1- Run App(remember that javascript shopuld be on at your browser)
+2- For access to API page you have to change statusbar to: 
+		Yourserver:port/apipath
+3- In "Search Paths By Station Name(API)" link we don't have respond because for test app you need at least insert
+	 two parameters(Original and Destination Station)
+		- we have four parameters: Original,Destination,Via1 and Via2 Station.
+		- two parameters are obligatory (Original(o) and Destination(d)
+		- two parameters are optional (Via1(v1) and Via2(v2)
+4- for test api you could use this query string:
+		Yourserver:port/apipath?o=ABBADIA%20LARIANA&d=ABBIATEGRASSO

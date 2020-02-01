@@ -1,0 +1,141 @@
+﻿body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #E6E6E6;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+.h1 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+label.stations {
+    font-size: 14px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-weight: 100;
+    font-weight: bold;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.btn-submit {
+    border: 1px solid black;
+    color: white;
+    background: #608492;
+    font-weight: 300;
+    min-width: 110px;
+    padding: 6px 22px;
+    border-radius: 65px;
+    align-content: center;
+    margin: 5px;
+}
+
+.tbl-records {
+    align-content: center;
+    text-align: center;
+    background-color: ghostwhite;
+    border: outset;
+    width: auto;
+    border-collapse: collapse;
+    margin: 5px auto;
+}
+
+th {
+    margin: 0px;
+    padding: 5px;
+    border: 1px solid #080808;
+}
+
+.tr-title {
+    font-family: sans-serif;
+    font-size: 15px;
+    background-color: #e8e8f3;
+}
+
+.tr-records {
+    font-size: 12px;
+    font-weight: unset;
+}
+
+.border {
+    border: 1px solid #080808;
+}
+
+div.validationsummary {
+    color: #d88888;
+    padding-top: 5px;
+}
+
+div.container {
+    border-radius: 26px 26px 16px 16px;
+    padding: 0;
+    background-color: rgba(255,255,255,.9);
+}
+
+div.body {
+    padding: 15px 15px;
+}
+
+.header-table {
+    font-size: 17px;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: ghostwhite;
+    color: black;
+    padding: 5px;
+}
+
+.dropdown-stations {
+    width: 300px;
+    background: #f2f2f2;
+    border-radius: 10px;
+    border: none;
+    padding: 2px 7px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.header-main {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: #30383b;
+    color: white;
+    padding: 5px;
+}
+
+.box-header {
+    padding: 0 0 5px 0;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 2px solid #ccc;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.margin-bottom {
+    margin-bottom: 10px;
+}

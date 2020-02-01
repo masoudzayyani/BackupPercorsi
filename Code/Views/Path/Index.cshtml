@@ -1,0 +1,80 @@
+﻿@model IEnumerable<PathApp.Models.PercorsiModel>
+
+@{
+    ViewData["Title"] = "Paths";
+}
+<h1>Paths</h1>
+
+<p>
+    <a asp-action="Create">Create New Path</a>
+</p>
+<div>
+    List Of Paths
+</div>
+<table id="table-records">
+    <thead class="header-table">
+        <tr>
+            <th>
+                <b>@Html.DisplayNameFor(model => model.IdPercorso)</b>
+            </th>
+            <th>
+                <b>@Html.DisplayNameFor(model => model.IdSottorete)</b>
+            </th>
+            <th>
+                <b>@Html.DisplayNameFor(model => model.IdStazioneOrigine)</b>
+            </th>
+            <th>
+                <b>@Html.DisplayNameFor(model => model.IdStazioneDestinazione)</b>
+            </th>
+            <th>
+                <b>@Html.DisplayNameFor(model => model.IdVia1)</b>
+            </th>
+            <th>
+                <b>@Html.DisplayNameFor(model => model.IdVia2)</b>
+            </th>
+            <th>
+                <b>@Html.DisplayNameFor(model => model.Distanza)</b>
+            </th>
+            <th>
+                <b>@Html.DisplayNameFor(model => model.Versione)</b>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdPercorso)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdSottorete)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem=>item.IdStazioneOrigine);
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdStazioneDestinazione)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdVia1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdVia2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItam => item.Distanza)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Versione)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdPercorso">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.IdPercorso">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdPercorso">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

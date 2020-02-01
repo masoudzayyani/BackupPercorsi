@@ -1,0 +1,55 @@
+﻿@model PathApp.Models.StazioneModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete @Model.NomeStazione Station?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IDStazione)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IDStazione)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CodiceStazione)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CodiceStazione)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NomeStazione)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NomeStazione)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RitiroTessera)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RitiroTessera)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RiCaricaAbbonamento)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RiCaricaAbbonamento)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Versione)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Versione)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete" asp-route-id="@Model.IDStazione">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to Station List</a>
+    </form>
+</div>

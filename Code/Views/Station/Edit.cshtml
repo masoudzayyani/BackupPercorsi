@@ -1,0 +1,50 @@
+﻿@model PathApp.Models.StazioneModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+    <h1>Edit Station</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" asp-route-id="@Model.IDStazione">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IDStazione" />
+            <div class="form-group">
+                <label asp-for="CodiceStazione" class="control-label"></label>
+                <input asp-for="CodiceStazione" class="form-control" />
+                <span asp-validation-for="CodiceStazione" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NomeStazione" class="control-label"></label>
+                <input asp-for="NomeStazione" class="form-control" />
+                <span asp-validation-for="NomeStazione" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RitiroTessera" class="control-label"></label>
+                <input asp-for="RitiroTessera" class="form-control" />
+                <span asp-validation-for="RitiroTessera" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RiCaricaAbbonamento" class="control-label"></label>
+                <input asp-for="RiCaricaAbbonamento" class="form-control" />
+                <span asp-validation-for="RiCaricaAbbonamento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Versione" class="control-label"></label>
+                <input asp-for="Versione" class="form-control" />
+                <span asp-validation-for="Versione" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save Change" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to Station List</a>
+</div>
+

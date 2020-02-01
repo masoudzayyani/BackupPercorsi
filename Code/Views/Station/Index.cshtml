@@ -1,0 +1,68 @@
+﻿@model IEnumerable<PathApp.Models.StazioneModel>
+
+@{
+    ViewData["Title"] = "Stations";
+}
+<h1>Stations</h1>
+
+<p>
+    <a asp-action="Create">Create New Station</a>
+</p>
+<div>
+    List Of Stations
+</div>
+<table id="table-records">
+    <thead class="header-table">
+        <tr>
+            <th>
+                <b>@Html.DisplayNameFor(model => model.IDStazione)</b>
+            </th>
+            <th>
+                <b>@Html.DisplayNameFor(model => model.CodiceStazione)</b>
+            </th>
+            <th>
+                <b>@Html.DisplayNameFor(model => model.NomeStazione)</b>
+            </th>
+            <th>
+                <b>@Html.DisplayNameFor(model => model.RitiroTessera)</b>
+            </th>
+            <th>
+                <b>@Html.DisplayNameFor(model => model.RiCaricaAbbonamento)</b>
+            </th>
+            <th>
+                <b>@Html.DisplayNameFor(model => model.Versione)</b>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IDStazione)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CodiceStazione)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeStazione)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RitiroTessera)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RiCaricaAbbonamento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Versione)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IDStazione">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.IDStazione">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IDStazione">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

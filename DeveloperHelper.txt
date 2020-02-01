@@ -1,0 +1,6 @@
+1- Create new Database and then Restore Backup form Data Folder
+2- change SelectedDatabase attribute in appsetting.json file with your choice Database name
+	(we have two Available Database now,postgres and mysql)
+3- Run App
+4- for test api you could use this query string:
+		Yourserver:port/apipath?o=ABBADIA%20LARIANA&d=ABBIATEGRASSO
